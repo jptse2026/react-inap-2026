@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="title">
+  <title id="title">Ilustración de un coche en carretera</title>
+  <rect width="480" height="280" rx="18" fill="#eaf3f8"/>
+  <circle cx="386" cy="66" r="28" fill="#f3c85b"/>
+  <path d="M0 194c74-35 136-34 211-3s159 29 269-15v104H0z" fill="#d2e5ed"/>
+  <path d="M0 228c114-24 237-21 480-8v60H0z" fill="#b5d0dc"/>
+  <path d="M227 280c-1-61 17-110 49-166" fill="none" stroke="#fff" stroke-width="36"/>
+  <path d="M227 280c-1-61 17-110 49-166" fill="none" stroke="#aac2ce" stroke-width="2" stroke-dasharray="12 13"/>
+  <g transform="translate(75 104)">
+    <path d="m37 74 14-40c4-12 15-20 28-20h89c12 0 22 6 29 16l27 44 19 9c8 4 13 12 13 21v21H18V99c0-11 7-21 19-25Z" fill="#075b91"/>
+    <path d="m67 40 8-17c2-5 7-8 13-8h30v35H63zM128 15h38c7 0 13 4 17 9l21 34h-76z" fill="#dcecf3"/>
+    <path d="M19 91h227v29H19z" fill="#123b5d"/>
+    <circle cx="65" cy="120" r="22" fill="#263746"/>
+    <circle cx="65" cy="120" r="10" fill="#dce5e9"/>
+    <circle cx="197" cy="120" r="22" fill="#263746"/>
+    <circle cx="197" cy="120" r="10" fill="#dce5e9"/>
+    <rect x="221" y="84" width="17" height="8" rx="4" fill="#f3c85b"/>
+    <rect x="24" y="84" width="13" height="8" rx="4" fill="#f3c85b"/>
+  </g>
+  <g fill="#fff" opacity=".85">
+    <circle cx="82" cy="74" r="4"/>
+    <circle cx="103" cy="53" r="3"/>
+    <circle cx="346" cy="116" r="4"/>
+  </g>
+</svg>

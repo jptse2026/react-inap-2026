@@ -1,0 +1,34 @@
+:root {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #263746;
+  background: #eaf0f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --blue-900: #123b5d;
+  --blue-700: #075b91;
+  --red: #c7353d;
+  --text: #334b5e;
+  --border: #d5e0e8;
+  --surface: #fff;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  font: inherit;
+}

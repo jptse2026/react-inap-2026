@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 type EstadoRestriccion = "Permitido" | "Restricción parcial" | "Prohibido";
 
 export default function Restriccion() {
@@ -14,12 +15,20 @@ export default function Restriccion() {
   }
 
   return (
-    <div style={{ border: "1px solid #444", padding: "1rem", borderRadius: "8px" }}>
-      <h3>Restricción de tráfico actual:</h3>
-      <p><strong>{estado}</strong></p>
-      <button onClick={cambiarEstado}>
-        Cambiar estado
-      </button>
-    </div>
+    <>
+      <div
+        style={{
+          border: "1px solid #444",
+          padding: "1rem",
+          borderRadius: "8px",
+        }}
+      >
+        <h3>Restricción de tráfico actual:</h3>
+        <p>
+          <strong>{estado}</strong>
+        </p>
+        <button onClick={cambiarEstado}>Cambiar estado</button>
+      </div>
+    </>
   );
 }

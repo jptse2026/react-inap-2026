@@ -1,0 +1,82 @@
+[
+  {
+    "matricula": "1234ABC",
+    "marca": "Seat",
+    "modelo": "León",
+    "color": "Gris",
+    "seguroEnVigor": true,
+    "fechaUltimaITV": "2024-06-10"
+  },
+  {
+    "matricula": "5678XYZ",
+    "marca": "Renault",
+    "modelo": "Clio",
+    "color": "Rojo",
+    "seguroEnVigor": false,
+    "fechaUltimaITV": "2023-11-02"
+  },
+  {
+    "matricula": "9012KLM",
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "color": "Azul",
+    "seguroEnVigor": true,
+    "fechaUltimaITV": "2025-02-18"
+  },
+  {
+    "matricula": "2468BCD",
+    "marca": "Volkswagen",
+    "modelo": "Golf",
+    "color": "Negro",
+    "seguroEnVigor": true,
+    "fechaUltimaITV": "2024-09-14"
+  },
+  {
+    "matricula": "1357FGH",
+    "marca": "Peugeot",
+    "modelo": "308",
+    "color": "Blanco",
+    "seguroEnVigor": true,
+    "fechaUltimaITV": "2025-01-23"
+  },
+  {
+    "matricula": "8024JKL",
+    "marca": "Ford",
+    "modelo": "Focus",
+    "color": "Gris",
+    "seguroEnVigor": false,
+    "fechaUltimaITV": "2023-08-07"
+  },
+  {
+    "matricula": "7193MNP",
+    "marca": "Hyundai",
+    "modelo": "Tucson",
+    "color": "Verde",
+    "seguroEnVigor": true,
+    "fechaUltimaITV": "2024-12-02"
+  },
+  {
+    "matricula": "4506RST",
+    "marca": "Kia",
+    "modelo": "Sportage",
+    "color": "Azul",
+    "seguroEnVigor": true,
+    "fechaUltimaITV": "2025-03-11"
+  },
+  {
+    "matricula": "3821VWX",
+    "marca": "Citroën",
+    "modelo": "C3",
+    "color": "Rojo",
+    "seguroEnVigor": false,
+    "fechaUltimaITV": "2024-04-29"
+  },
+  {
+    "matricula": "9642BCD",
+    "marca": "Dacia",
+    "modelo": "Sandero",
+    "color": "Blanco",
+    "seguroEnVigor": true,
+    "fechaUltimaITV": "2025-05-16"
+  }
+]
