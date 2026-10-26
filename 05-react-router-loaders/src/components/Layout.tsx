@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet, useNavigation } from "react-router-dom";
+import Loading from "../shared/Loading";
 
 const activeNavClass = ({ isActive }: { isActive: boolean }) =>
   isActive ? "is-active" : "";
@@ -36,12 +37,7 @@ export default function Layout() {
       </header>
 
       <main className="portal-content">
-        {navigation.state === "loading" && (
-          <div className="navigation-loading" role="status" aria-live="polite">
-            <span className="loading-dot" aria-hidden="true" />
-            <span>Cargando contenido…</span>
-          </div>
-        )}
+        {navigation.state === "loading" && (<Loading mensaje="Cargando contenido"/>)}
         <Outlet />
       </main>
 

@@ -1,35 +1,24 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import type { Vehiculo } from "../../interfaces/Vehiculo";
 import Loading from "../../shared/Loading";
-import { getVehiculos } from "../../utils/vehiculosService";
+
+type LoaderData = { vehiculos : Vehiculo[]}
 
 export default function Vehiculos() {
-  const [vehiculos, setVehiculos] = useState<Vehiculo[]>([]);
+
+  const { vehiculos } = useLoaderData() as LoaderData;
+
   const [loading, setLoading] = useState(true);
   const [filtro, setFiltro] = useState("");
 
-  useEffect(() => {
-
-    setTimeout(() => {
-        getVehiculos()
-          .then((datos) => {
-              setVehiculos(datos);
-          })
-          .catch((e: Error) => {
-              console.log(e.message);
-          })
-          .finally(() => {
-              setLoading(false);
-          });
-    }, 500);
-
-  }, []);
+  useEffect( () => {
+    const retardo = setTimeout( () => setLoading(false), 500);
+    return () => clearTimeout(retardo);
+  },[])
 
 
-  if (loading) {
-    return <Loading mensaje="Cargando vehículos..." />;
-  }
+
 
   const normalizar = (cad : string) => cad.normalize("NFD")
                                           .replace(/[\u0300-\u036f]/g, "")
@@ -37,9 +26,13 @@ export default function Vehiculos() {
                                           .toLowerCase(); 
 
   const vehiculosFiltrados = vehiculos.filter( veh  => {
-        console.log(normalizar(JSON.stringify(veh)));
         if(normalizar(JSON.stringify(veh)).includes(normalizar(filtro))) return veh;
   });
+
+
+    if (loading) {
+    return <Loading mensaje="Cargando vehículos..." />;
+  }
 
 
   return (

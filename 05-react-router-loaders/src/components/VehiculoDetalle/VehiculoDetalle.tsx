@@ -1,44 +1,26 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import vehiculoDgt from "../../assets/vehiculo-dgt.svg";
 import Loading from "../../shared/Loading";
-import type { Vehiculo } from "../../interfaces/Vehiculo";
-import { getVehiculos } from "../../utils/vehiculosService";
+import type { Vehiculo } from '../../interfaces/Vehiculo'
+
+type LoaderData = { vehiculo : Vehiculo }
 
 export default function VehiculoDetalle() {
-  const [vehiculo, setVehiculo] = useState<Vehiculo | null>(null);
-  const [loading, setLoading] = useState(true);
-  const { matricula } = useParams<{ matricula: string }>();
 
-  useEffect(() => {
 
-    let anulado = false;
+  const { vehiculo } = useLoaderData() as LoaderData;
+  const [loading, setLoading] = useState(true);  
 
-    const timer = setTimeout(() => {
+  const navigate = useNavigate()
 
-      getVehiculos()
-          .then((vehiculos) => {
-            if (anulado) 
-              return; 
-            setVehiculo(vehiculos.find((item) => item.matricula === matricula) ?? null);        
-          })
-          .catch((e: Error) => {
-            if (anulado) return;
-            console.log(e.message);
-          })
-          .finally(() => {
-            if(anulado) return;
-            setLoading(false)}
-          );
-    },500);
+  useEffect( () => {
+    const retardo = setTimeout( () => setLoading(false), 500);
+    return () => clearTimeout(retardo);
+  },[])
 
-    return () => {
-      anulado = true;
-      clearTimeout(timer);
-    }
-         
 
-  }, [matricula]);
+ 
 
   if (loading) {
     return <Loading mensaje="Cargando detalles del vehiculo..."/>;
@@ -98,7 +80,7 @@ export default function VehiculoDetalle() {
 
       <div className="vehicle-card-footer">
         <span>Información simulada para esta demostración.</span>
-        <Link to="/vehiculos">Volver al listado</Link>
+        <button onClick={() => navigate("/vehiculos")}>Volver al listado</button>
       </div>
     </section>
   );

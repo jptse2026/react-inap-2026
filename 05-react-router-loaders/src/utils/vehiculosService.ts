@@ -22,5 +22,5 @@ export async function vehiculoDetalleLoader({ params }: { params: { matricula?: 
   if (!v) {
     throw new Response("Vehículo no encontrado", { status: 404, statusText: "No encontrado" });
   }
-  return { vehiculo: v };
+  return { vehiculo : v };
 }

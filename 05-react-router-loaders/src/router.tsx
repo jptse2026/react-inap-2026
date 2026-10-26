@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import Layout from "./components/Layout";
 
 import AboutRuta from './components/About/About.ruta';
