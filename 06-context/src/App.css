@@ -1,0 +1,279 @@
+.game-page {
+  width: min(100% - 2rem, 900px);
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.page-heading {
+  margin: 0 auto 2.5rem;
+  max-width: 620px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: var(--foreground);
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+}
+
+.page-description {
+  margin: 0.9rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 1rem;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 1.15fr);
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.attempts-card,
+.play-card {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.attempts-card {
+  padding: 1.5rem;
+}
+
+.attempts-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.attempts-heading h2,
+.card-heading h2 {
+  margin: 0;
+  color: var(--foreground);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.attempt-count {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.attempt-list {
+  display: grid;
+  gap: 0.625rem;
+  max-height: 390px;
+  margin: 1rem 0 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.attempt-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 3px);
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.attempt-item-latest {
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+  background: var(--muted);
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.attempt-item-latest .attempt-number {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.attempt-number {
+  flex: 0 0 auto;
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+.empty-attempts {
+  margin: 1rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.play-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+
+.card-heading .eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+.game-status {
+  min-height: 2.75rem;
+  margin: 0.625rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.game-controls {
+  display: grid;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.game-controls label {
+  color: var(--foreground);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.game-controls input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--input);
+  border-radius: calc(var(--radius) - 3px);
+  outline: none;
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+.game-controls input:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 22%, transparent);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 0.375rem;
+}
+
+.button-row button {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border: 1px solid transparent;
+  border-radius: calc(var(--radius) - 3px);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 150ms, border-color 150ms, opacity 150ms;
+}
+
+.button-row button:first-child {
+  flex: 1;
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.button-row button:first-child:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.button-row button:last-child {
+  border-color: var(--border);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.button-row button:last-child:hover {
+  background: var(--muted);
+}
+
+.button-row button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.button-row button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.range-hint {
+  margin: 1.25rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.attempt-summary {
+  margin: auto 0 0;
+  padding-top: 1.25rem;
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.context-footer {
+  margin-top: 1.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.context-footer code {
+  color: var(--foreground);
+  font-size: 0.9em;
+}
+
+@media (max-width: 640px) {
+  .game-page {
+    width: min(100% - 1.5rem, 480px);
+    padding: 3rem 0;
+  }
+
+  .page-heading {
+    margin-bottom: 1.75rem;
+    text-align: left;
+  }
+
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .play-card {
+    grid-row: 1;
+    padding: 1.25rem;
+  }
+
+  .attempts-card {
+    padding: 1.25rem;
+  }
+}
